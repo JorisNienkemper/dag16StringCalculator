@@ -33,7 +33,7 @@ public class StringCalculatorTests {
         assertThat(sum).isEqualTo(0);
     }
 
-    @Test
+    @Test //Lastig om dit beter te omschrijven t.b.c.
     void whenSumIsCalledWithStringOneThenTheNumberOneShouldBeReturned() {
 
         int sum = stringCalculator.sum("1");
@@ -41,6 +41,14 @@ public class StringCalculatorTests {
         assertThat(sum).isEqualTo(1);
     }
 
+
+    @Test
+    void whenSumIsCalledWithStringReprestingTwoNumbersSeparatedByACommaOneThenTheNumberOneShouldBeReturned() {
+
+        int sum = stringCalculator.sum("1,2");
+
+        assertThat(sum).isEqualTo(1);
+    }
 
     @Test
     void exploratieveTest() {
