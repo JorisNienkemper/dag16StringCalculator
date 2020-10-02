@@ -12,13 +12,12 @@ public class StringCalculatorTests {
     StringCalculator stringCalculator;
 
     @BeforeEach
-    void setUp(){
-        System.out.println("De setup gaat af");
+    void setUp() {
         stringCalculator = new StringCalculator();
     }
 
     @Test
-    // wanneer we sum aanroepen met een bepaalde string dan verwacht ik een bepaalde uitkomst
+        // wanneer we sum aanroepen met een bepaalde string dan verwacht ik een bepaalde uitkomst
     void whenSumIsCalledWithANullValueThenTheNumberZeroShouldBeReturned() {
 
         int sum = stringCalculator.sum(null);
@@ -34,8 +33,27 @@ public class StringCalculatorTests {
         assertThat(sum).isEqualTo(0);
     }
 
+    @Test
+    void whenSumIsCalledWithStringOneThenTheNumberOneShouldBeReturned() {
+
+        int sum = stringCalculator.sum("1");
+
+        assertThat(sum).isEqualTo(1);
+    }
+
+
+    @Test
+    void exploratieveTest() {
+        String s1 = "5,4";
+
+        int length = s1.length();
+        assertThat(length).isEqualTo(2);
+
+        boolean bevatStringMeerdereGetallen = s1.contains(",");
+    }
+
     @AfterEach
-    void cleanUp(){
+    void cleanUp() {
         stringCalculator = null;
     }
 }
